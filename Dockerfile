@@ -11,15 +11,7 @@ RUN apt-get install -y nodejs
 RUN apt-get update \
     && apt-get install -y nginx \
     && apt-get clean
-
-RUN cat /etc/nginx/nginx.conf
-
-RUN rm /etc/nginx/nginx.conf
-
-COPY nginx.conf /etc/nginx/nginx.conf
-
-RUN cat /etc/nginx/nginx.conf
-
+   
 COPY default /etc/nginx/sites-enabled/default
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
