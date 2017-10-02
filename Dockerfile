@@ -13,8 +13,11 @@ RUN apt-get update \
     && apt-get clean
 
 RUN cat /etc/nginx/nginx.conf
+
 RUN rm /etc/nginx/nginx.conf
+
 COPY nginx.conf /etc/nginx/nginx.conf
+
 RUN cat /etc/nginx/nginx.conf
 
 COPY default /etc/nginx/sites-enabled/default
