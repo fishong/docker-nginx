@@ -1,13 +1,12 @@
 FROM debian:stretch-slim
 
 RUN apt-get update \
-    && apt-get -y install python-software-properties git build-essential \
+    && apt-get -y install git build-essential \
     && apt-get install -y curl \
     && apt-get -y autoclean
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
-
 
 ENV NGINX_VERSION 1.12.1-1~stretch
 ENV NJS_VERSION   1.12.1.0.1.10-1~stretch
