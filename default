@@ -1,11 +1,11 @@
 server {
         listen   80;
         index index.html index.htm;
-        root /var/www;
+        root /usr/share/nginx/html;
         server_name localhost;
 
         location / {
-                root /var/www;
+                root /usr/share/nginx/html;
                 try_files $uri $uri/ /index.html =404;
                 autoindex off;
         }
