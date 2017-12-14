@@ -9,9 +9,10 @@ server {
                 try_files $uri $uri/ /index.html =404;
                 autoindex off;
         }
+        
+	location ~* \.(jpg|jpeg|png|css|js|gif|ttf|woff2)$ {  
+		root /usr/share/nginx/html;
 
-        location ~* \.(jpg|jpeg|png|css|js)$ {
-                root /usr/share/nginx/html;
-                expires 365d;
-        }
+		expires 365d;  
+	}
 }
